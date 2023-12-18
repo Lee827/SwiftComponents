@@ -6,7 +6,7 @@
 //
 
 public extension Dictionary where Key == String {
-  public subscript(caseInsensitive key: Key) -> Value? {
+  subscript(caseInsensitive key: Key) -> Value? {
     get {
       guard let exists = keys.first(where: { $0.caseInsensitiveCompare(key) == .orderedSame }) else { return nil; }
       return self[exists];

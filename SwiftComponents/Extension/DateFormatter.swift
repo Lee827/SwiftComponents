@@ -6,7 +6,7 @@
 //
 
 public extension DateFormatter {
-  public func dateFormat(string: String, from: String? = "yyyy-MM-dd HH:mm:ss", changeTo: String? = "yyyy/MM/dd", locale: Locale? = Locale(identifier: "en_US_POSIX"), timeZone: TimeZone? = TimeZone(abbreviation: "GMT")) -> String {
+  func dateFormat(string: String, from: String? = "yyyy-MM-dd HH:mm:ss", changeTo: String? = "yyyy/MM/dd", locale: Locale? = Locale(identifier: "en_US_POSIX"), timeZone: TimeZone? = TimeZone(abbreviation: "GMT")) -> String {
     let dateFormatter = DateFormatter();
     dateFormatter.dateFormat = from;
     dateFormatter.timeZone = timeZone;

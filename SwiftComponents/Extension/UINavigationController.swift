@@ -18,7 +18,7 @@ public extension UINavigationController {
     }
   }
   
-  public func pushViewController(_ viewController: UIViewController, animated: Bool, completion: @escaping (() -> Void)) {
+  func pushViewController(_ viewController: UIViewController, animated: Bool, completion: @escaping (() -> Void)) {
     let _viewController = self.topViewController;
     if self.viewControllers.count >= 1 {
       _viewController?.hidesBottomBarWhenPushed = true;
@@ -30,17 +30,17 @@ public extension UINavigationController {
     doAfterAnimatingTransition(animated: animated, completion: completion);
   }
   
-  public func popViewController(animated: Bool, completion: @escaping (() -> Void)) {
+  func popViewController(animated: Bool, completion: @escaping (() -> Void)) {
     popViewController(animated: animated);
     doAfterAnimatingTransition(animated: animated, completion: completion);
   }
   
-  public func popToRootViewControllerAnimated(animated: Bool, completion: @escaping (() -> Void)) {
+  func popToRootViewControllerAnimated(animated: Bool, completion: @escaping (() -> Void)) {
     popToRootViewController(animated: animated);
     doAfterAnimatingTransition(animated: animated, completion: completion);
   }
   
-  public static func navBarHeight() -> CGFloat {
+  static func navBarHeight() -> CGFloat {
     let nVc = UINavigationController(rootViewController: UIViewController(nibName: nil, bundle: nil));
     let navBarHeight = nVc.navigationBar.frame.size.height;
     return navBarHeight;

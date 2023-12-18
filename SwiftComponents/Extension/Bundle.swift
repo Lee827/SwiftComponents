@@ -6,10 +6,10 @@
 //
 
 public extension Bundle {
-  public var releaseVersionNumber: String {
+  var releaseVersionNumber: String {
     return infoDictionary?["CFBundleShortVersionString"] as? String ?? "0.0.0";
   }
-  public var buildVersionNumber: String {
+  var buildVersionNumber: String {
     return infoDictionary?["CFBundleVersion"] as? String ?? "0";
   }
 }

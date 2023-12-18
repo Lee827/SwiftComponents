@@ -8,7 +8,7 @@
 import Foundation
 
 public extension UILabel {
-  public func addCharacterSpacing(kernValue: Double = 1.15) {
+  func addCharacterSpacing(kernValue: Double = 1.15) {
     if let labelText = text, labelText.count > 0 {
       let attributedString = NSMutableAttributedString(string: labelText);
       attributedString.addAttribute(NSAttributedString.Key.kern, value: kernValue, range: NSRange(location: 0, length: attributedString.length - 1));
@@ -16,7 +16,7 @@ public extension UILabel {
     }
   }
   
-  public var actualFontSize: CGFloat {
+  var actualFontSize: CGFloat {
     //initial label
     let fullSizeLabel = UILabel();
     fullSizeLabel.font = self.font;
@@ -31,7 +31,7 @@ public extension UILabel {
     return actualFontSize;
   }
   
-  public func setUnderLine() {
+  func setUnderLine() {
     if let labelText = text, labelText.count > 0 {
       let attributedString = NSMutableAttributedString(string: labelText);
       attributedString.addAttribute(NSAttributedString.Key.underlineStyle, value: 1, range: NSRange(location: 0, length: attributedString.length));
